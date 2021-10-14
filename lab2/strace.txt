@@ -1,0 +1,207 @@
+execve("./parent", ["./parent"], 0x7fff45168f28 /* 51 vars */) = 0
+brk(NULL)                               = 0x555c31a22000
+arch_prctl(0x3001 /* ARCH_??? */, 0x7ffc311de050) = -1 EINVAL (Недопустимый аргумент)
+access("/etc/ld.so.preload", R_OK)      = -1 ENOENT (Нет такого файла или каталога)
+openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
+fstat(3, {st_mode=S_IFREG|0644, st_size=75854, ...}) = 0
+mmap(NULL, 75854, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7fe47f271000
+close(3)                                = 0
+openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libc.so.6", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\360q\2\0\0\0\0\0"..., 832) = 832
+pread64(3, "\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0"..., 784, 64) = 784
+pread64(3, "\4\0\0\0\20\0\0\0\5\0\0\0GNU\0\2\0\0\300\4\0\0\0\3\0\0\0\0\0\0\0", 32, 848) = 32
+pread64(3, "\4\0\0\0\24\0\0\0\3\0\0\0GNU\0\t\233\222%\274\260\320\31\331\326\10\204\276X>\263"..., 68, 880) = 68
+fstat(3, {st_mode=S_IFREG|0755, st_size=2029224, ...}) = 0
+mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fe47f26f000
+pread64(3, "\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0"..., 784, 64) = 784
+pread64(3, "\4\0\0\0\20\0\0\0\5\0\0\0GNU\0\2\0\0\300\4\0\0\0\3\0\0\0\0\0\0\0", 32, 848) = 32
+pread64(3, "\4\0\0\0\24\0\0\0\3\0\0\0GNU\0\t\233\222%\274\260\320\31\331\326\10\204\276X>\263"..., 68, 880) = 68
+mmap(NULL, 2036952, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7fe47f07d000
+mprotect(0x7fe47f0a2000, 1847296, PROT_NONE) = 0
+mmap(0x7fe47f0a2000, 1540096, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x25000) = 0x7fe47f0a2000
+mmap(0x7fe47f21a000, 303104, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x19d000) = 0x7fe47f21a000
+mmap(0x7fe47f265000, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1e7000) = 0x7fe47f265000
+mmap(0x7fe47f26b000, 13528, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7fe47f26b000
+close(3)                                = 0
+arch_prctl(ARCH_SET_FS, 0x7fe47f270540) = 0
+mprotect(0x7fe47f265000, 12288, PROT_READ) = 0
+mprotect(0x555c31497000, 4096, PROT_READ) = 0
+mprotect(0x7fe47f2b1000, 4096, PROT_READ) = 0
+munmap(0x7fe47f271000, 75854)           = 0
+pipe([3, 4])                            = 0
+pipe([5, 6])                            = 0
+pipe([7, 8])                            = 0
+clone(child_stack=NULL, flags=CLONE_CHILD_CLEARTID|CLONE_CHILD_SETTID|SIGCHLD, child_tidptr=0x7fe47f270810) = 5921
+clone(child_stack=NULL, flags=CLONE_CHILD_CLEARTID|CLONE_CHILD_SETTID|SIGCHLDstrace: Process 5921 attached
+, child_tidptr=0x7fe47f270810) = 5922
+[pid  5921] dup2(3, 0 <unfinished ...>
+[pid  5920] fstat(1,  <unfinished ...>
+[pid  5921] <... dup2 resumed>)         = 0
+[pid  5920] <... fstat resumed>{st_mode=S_IFCHR|0620, st_rdev=makedev(0x88, 0x2), ...}) = 0
+[pid  5920] brk(NULL)                   = 0x555c31a22000
+[pid  5920] brk(0x555c31a43000)         = 0x555c31a43000
+[pid  5920] write(1, "Enter string:\n", 14strace: Process 5922 attached
+ <unfinished ...>
+[pid  5921] dup2(6, 1 <unfinished ...>
+[pid  5920] <... write resumed>)        = 14
+[pid  5921] <... dup2 resumed>)         = 1
+[pid  5922] dup2(5, 0 <unfinished ...>
+[pid  5920] fstat(0,  <unfinished ...>
+[pid  5921] execve("./child1", [], 0x7ffc311de138 /* 51 vars */ <unfinished ...>
+[pid  5920] <... fstat resumed>{st_mode=S_IFCHR|0620, st_rdev=makedev(0x88, 0x2), ...}) = 0
+[pid  5922] <... dup2 resumed>)         = 0
+[pid  5920] read(0,  <unfinished ...>
+[pid  5922] dup2(8, 1)                  = 1
+[pid  5921] <... execve resumed>)       = 0
+[pid  5922] execve("./child2", [], 0x7ffc311de138 /* 51 vars */ <unfinished ...>
+[pid  5921] brk(NULL)                   = 0x55bf8b8b2000
+[pid  5922] <... execve resumed>)       = 0
+[pid  5921] arch_prctl(0x3001 /* ARCH_??? */, 0x7fff87c7fa30 <unfinished ...>
+[pid  5922] brk(NULL <unfinished ...>
+[pid  5921] <... arch_prctl resumed>)   = -1 EINVAL (Недопустимый аргумент)
+[pid  5922] <... brk resumed>)          = 0x55bf09fbe000
+[pid  5921] access("/etc/ld.so.preload", R_OK <unfinished ...>
+[pid  5922] arch_prctl(0x3001 /* ARCH_??? */, 0x7ffc726451e0 <unfinished ...>
+[pid  5921] <... access resumed>)       = -1 ENOENT (Нет такого файла или каталога)
+[pid  5922] <... arch_prctl resumed>)   = -1 EINVAL (Недопустимый аргумент)
+[pid  5921] openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC <unfinished ...>
+[pid  5922] access("/etc/ld.so.preload", R_OK <unfinished ...>
+[pid  5921] <... openat resumed>)       = 9
+[pid  5922] <... access resumed>)       = -1 ENOENT (Нет такого файла или каталога)
+[pid  5921] fstat(9,  <unfinished ...>
+[pid  5922] openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC <unfinished ...>
+[pid  5921] <... fstat resumed>{st_mode=S_IFREG|0644, st_size=75854, ...}) = 0
+[pid  5922] <... openat resumed>)       = 9
+[pid  5921] mmap(NULL, 75854, PROT_READ, MAP_PRIVATE, 9, 0 <unfinished ...>
+[pid  5922] fstat(9,  <unfinished ...>
+[pid  5921] <... mmap resumed>)         = 0x7ff51d818000
+[pid  5922] <... fstat resumed>{st_mode=S_IFREG|0644, st_size=75854, ...}) = 0
+[pid  5921] close(9 <unfinished ...>
+[pid  5922] mmap(NULL, 75854, PROT_READ, MAP_PRIVATE, 9, 0 <unfinished ...>
+[pid  5921] <... close resumed>)        = 0
+[pid  5922] <... mmap resumed>)         = 0x7fd4000f9000
+[pid  5922] close(9 <unfinished ...>
+[pid  5921] openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libc.so.6", O_RDONLY|O_CLOEXEC <unfinished ...>
+[pid  5922] <... close resumed>)        = 0
+[pid  5921] <... openat resumed>)       = 9
+[pid  5922] openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libc.so.6", O_RDONLY|O_CLOEXEC <unfinished ...>
+[pid  5921] read(9,  <unfinished ...>
+[pid  5922] <... openat resumed>)       = 9
+[pid  5921] <... read resumed>"\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\360q\2\0\0\0\0\0"..., 832) = 832
+[pid  5922] read(9,  <unfinished ...>
+[pid  5921] pread64(9,  <unfinished ...>
+[pid  5922] <... read resumed>"\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\360q\2\0\0\0\0\0"..., 832) = 832
+[pid  5921] <... pread64 resumed>"\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0"..., 784, 64) = 784
+[pid  5922] pread64(9,  <unfinished ...>
+[pid  5921] pread64(9,  <unfinished ...>
+[pid  5922] <... pread64 resumed>"\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0"..., 784, 64) = 784
+[pid  5921] <... pread64 resumed>"\4\0\0\0\20\0\0\0\5\0\0\0GNU\0\2\0\0\300\4\0\0\0\3\0\0\0\0\0\0\0", 32, 848) = 32
+[pid  5922] pread64(9,  <unfinished ...>
+[pid  5921] pread64(9,  <unfinished ...>
+[pid  5922] <... pread64 resumed>"\4\0\0\0\20\0\0\0\5\0\0\0GNU\0\2\0\0\300\4\0\0\0\3\0\0\0\0\0\0\0", 32, 848) = 32
+[pid  5921] <... pread64 resumed>"\4\0\0\0\24\0\0\0\3\0\0\0GNU\0\t\233\222%\274\260\320\31\331\326\10\204\276X>\263"..., 68, 880) = 68
+[pid  5922] pread64(9,  <unfinished ...>
+[pid  5921] fstat(9,  <unfinished ...>
+[pid  5922] <... pread64 resumed>"\4\0\0\0\24\0\0\0\3\0\0\0GNU\0\t\233\222%\274\260\320\31\331\326\10\204\276X>\263"..., 68, 880) = 68
+[pid  5921] <... fstat resumed>{st_mode=S_IFREG|0755, st_size=2029224, ...}) = 0
+[pid  5922] fstat(9,  <unfinished ...>
+[pid  5921] mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0 <unfinished ...>
+[pid  5922] <... fstat resumed>{st_mode=S_IFREG|0755, st_size=2029224, ...}) = 0
+[pid  5921] <... mmap resumed>)         = 0x7ff51d816000
+[pid  5922] mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0 <unfinished ...>
+[pid  5921] pread64(9,  <unfinished ...>
+[pid  5922] <... mmap resumed>)         = 0x7fd4000f7000
+[pid  5921] <... pread64 resumed>"\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0"..., 784, 64) = 784
+[pid  5922] pread64(9,  <unfinished ...>
+[pid  5921] pread64(9,  <unfinished ...>
+[pid  5922] <... pread64 resumed>"\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0"..., 784, 64) = 784
+[pid  5921] <... pread64 resumed>"\4\0\0\0\20\0\0\0\5\0\0\0GNU\0\2\0\0\300\4\0\0\0\3\0\0\0\0\0\0\0", 32, 848) = 32
+[pid  5922] pread64(9,  <unfinished ...>
+[pid  5921] pread64(9,  <unfinished ...>
+[pid  5922] <... pread64 resumed>"\4\0\0\0\20\0\0\0\5\0\0\0GNU\0\2\0\0\300\4\0\0\0\3\0\0\0\0\0\0\0", 32, 848) = 32
+[pid  5921] <... pread64 resumed>"\4\0\0\0\24\0\0\0\3\0\0\0GNU\0\t\233\222%\274\260\320\31\331\326\10\204\276X>\263"..., 68, 880) = 68
+[pid  5922] pread64(9,  <unfinished ...>
+[pid  5921] mmap(NULL, 2036952, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 9, 0 <unfinished ...>
+[pid  5922] <... pread64 resumed>"\4\0\0\0\24\0\0\0\3\0\0\0GNU\0\t\233\222%\274\260\320\31\331\326\10\204\276X>\263"..., 68, 880) = 68
+[pid  5921] <... mmap resumed>)         = 0x7ff51d624000
+[pid  5922] mmap(NULL, 2036952, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 9, 0 <unfinished ...>
+[pid  5921] mprotect(0x7ff51d649000, 1847296, PROT_NONE <unfinished ...>
+[pid  5922] <... mmap resumed>)         = 0x7fd3fff05000
+[pid  5922] mprotect(0x7fd3fff2a000, 1847296, PROT_NONE <unfinished ...>
+[pid  5921] <... mprotect resumed>)     = 0
+[pid  5922] <... mprotect resumed>)     = 0
+[pid  5921] mmap(0x7ff51d649000, 1540096, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 9, 0x25000 <unfinished ...>
+[pid  5922] mmap(0x7fd3fff2a000, 1540096, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 9, 0x25000 <unfinished ...>
+[pid  5921] <... mmap resumed>)         = 0x7ff51d649000
+[pid  5922] <... mmap resumed>)         = 0x7fd3fff2a000
+[pid  5921] mmap(0x7ff51d7c1000, 303104, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 9, 0x19d000 <unfinished ...>
+[pid  5922] mmap(0x7fd4000a2000, 303104, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 9, 0x19d000 <unfinished ...>
+[pid  5921] <... mmap resumed>)         = 0x7ff51d7c1000
+[pid  5922] <... mmap resumed>)         = 0x7fd4000a2000
+[pid  5921] mmap(0x7ff51d80c000, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 9, 0x1e7000 <unfinished ...>
+[pid  5922] mmap(0x7fd4000ed000, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 9, 0x1e7000 <unfinished ...>
+[pid  5921] <... mmap resumed>)         = 0x7ff51d80c000
+[pid  5922] <... mmap resumed>)         = 0x7fd4000ed000
+[pid  5922] mmap(0x7fd4000f3000, 13528, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0 <unfinished ...>
+[pid  5921] mmap(0x7ff51d812000, 13528, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0 <unfinished ...>
+[pid  5922] <... mmap resumed>)         = 0x7fd4000f3000
+[pid  5921] <... mmap resumed>)         = 0x7ff51d812000
+[pid  5922] close(9 <unfinished ...>
+[pid  5921] close(9 <unfinished ...>
+[pid  5922] <... close resumed>)        = 0
+[pid  5921] <... close resumed>)        = 0
+[pid  5922] arch_prctl(ARCH_SET_FS, 0x7fd4000f8540 <unfinished ...>
+[pid  5921] arch_prctl(ARCH_SET_FS, 0x7ff51d817540 <unfinished ...>
+[pid  5922] <... arch_prctl resumed>)   = 0
+[pid  5921] <... arch_prctl resumed>)   = 0
+[pid  5922] mprotect(0x7fd4000ed000, 12288, PROT_READ) = 0
+[pid  5921] mprotect(0x7ff51d80c000, 12288, PROT_READ <unfinished ...>
+[pid  5922] mprotect(0x55bf08b03000, 4096, PROT_READ <unfinished ...>
+[pid  5921] <... mprotect resumed>)     = 0
+[pid  5922] <... mprotect resumed>)     = 0
+[pid  5921] mprotect(0x55bf8b435000, 4096, PROT_READ <unfinished ...>
+[pid  5922] mprotect(0x7fd400139000, 4096, PROT_READ <unfinished ...>
+[pid  5921] <... mprotect resumed>)     = 0
+[pid  5922] <... mprotect resumed>)     = 0
+[pid  5921] mprotect(0x7ff51d858000, 4096, PROT_READ <unfinished ...>
+[pid  5922] munmap(0x7fd4000f9000, 75854 <unfinished ...>
+[pid  5921] <... mprotect resumed>)     = 0
+[pid  5922] <... munmap resumed>)       = 0
+[pid  5921] munmap(0x7ff51d818000, 75854 <unfinished ...>
+[pid  5922] fstat(0,  <unfinished ...>
+[pid  5921] <... munmap resumed>)       = 0
+[pid  5922] <... fstat resumed>{st_mode=S_IFIFO|0600, st_size=0, ...}) = 0
+[pid  5921] fstat(0,  <unfinished ...>
+[pid  5922] brk(NULL <unfinished ...>
+[pid  5921] <... fstat resumed>{st_mode=S_IFIFO|0600, st_size=0, ...}) = 0
+[pid  5922] <... brk resumed>)          = 0x55bf09fbe000
+[pid  5922] brk(0x55bf09fdf000 <unfinished ...>
+[pid  5921] brk(NULL <unfinished ...>
+[pid  5922] <... brk resumed>)          = 0x55bf09fdf000
+[pid  5921] <... brk resumed>)          = 0x55bf8b8b2000
+[pid  5922] read(0,  <unfinished ...>
+[pid  5921] brk(0x55bf8b8d3000)         = 0x55bf8b8d3000
+[pid  5921] read(0,  <unfinished ...>
+[pid  5920] <... read resumed>"GFIGI IFH\n", 1024) = 10
+[pid  5920] write(4, "GFIGI IFH\n", 10) = 10
+[pid  5921] <... read resumed>"GFIGI IFH\n", 4096) = 10
+[pid  5920] read(7,  <unfinished ...>
+[pid  5921] fstat(1, {st_mode=S_IFIFO|0600, st_size=0, ...}) = 0
+[pid  5921] write(1, "gfigi ifh\n", 10) = 10
+[pid  5922] <... read resumed>"gfigi ifh\n", 4096) = 10
+[pid  5921] read(0,  <unfinished ...>
+[pid  5922] fstat(1, {st_mode=S_IFIFO|0600, st_size=0, ...}) = 0
+[pid  5922] write(1, "gfigi_ifh\n", 10) = 10
+[pid  5920] <... read resumed>"gfigi_ifh\n", 256) = 10
+[pid  5922] read(0,  <unfinished ...>
+[pid  5920] write(1, "gfigi_ifh\n", 10) = 10
+[pid  5920] read(0, 0x555c31a226b0, 1024) = ? ERESTARTSYS (To be restarted if SA_RESTART is set)
+[pid  5922] <... read resumed>0x55bf09fbe2a0, 4096) = ? ERESTARTSYS (To be restarted if SA_RESTART is set)
+[pid  5921] <... read resumed>0x55bf8b8b22a0, 4096) = ? ERESTARTSYS (To be restarted if SA_RESTART is set)
+[pid  5920] read(0,  <unfinished ...>
+[pid  5922] read(0,  <unfinished ...>
+[pid  5921] read(0,  <unfinished ...>
+[pid  5920] <... read resumed>0x555c31a226b0, 1024) = ? ERESTARTSYS (To be restarted if SA_RESTART is set)
+strace: Process 5920 detached
+strace: Process 5921 detached
+strace: Process 5922 detached
